@@ -17,9 +17,13 @@ function [MI,CFC]=modulation_index(thetaphase,data_gamma,nbins)
 
 % Author: Victor Lopez Madrona <v.lopez.madrona@gmail.com>
 % License: BSD (3-clause)
-% Nov. 2018; Last revision: 14-Jul-2020
+% Nov. 2018; Last revision: 15-Jul-2020
 
 %%
+if mod(nbins,4)~=0
+    nbins = nbins + (4-mod(nbins,4)); %Increase nbins to the next multiple of four
+end
+
 hil_gamma=hilbert(data_gamma);
 amplitude=abs(hil_gamma);
 
