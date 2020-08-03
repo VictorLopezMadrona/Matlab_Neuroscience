@@ -25,8 +25,8 @@ function CFD=CFD_parallel(data_phase,data_amplitude,varargin)
 
 % This function is based or uses code from:
 % [1] Jiang, H., Bahramisharif, A., van Gerven, M. A., & Jensen, O. (2015). Measuring directionality between neuronal oscillations of different frequencies. Neuroimage, 118, 359-367.
-% [2] Guido Nolte, Andreas Ziehe, Vadim Nikulin, Alois Schlögl, Nicole Krämer, Tom Brismar, Klaus-Robert Müller; Robustly estimating the flow direction of information in complex physical systems; Physical Review Letters 100, 234101, 2008
-% [3] Niso, G., Bruña, R., Pereda, E., Gutiérrez, R., Bajo, R., Maestú, F., & del-Pozo, F. (2013). HERMES: towards an integrated toolbox to characterize functional and effective brain connectivity. Neuroinformatics, 11(4), 405-434. DOI: 10.1007/s12021-013-9186-1.
+% [2] Guido Nolte, Andreas Ziehe, Vadim Nikulin, Alois SchlÃ¶gl, Nicole KrÃ¤mer, Tom Brismar, Klaus-Robert MÃ¼ller; Robustly estimating the flow direction of information in complex physical systems; Physical Review Letters 100, 234101, 2008
+% [3] Niso, G., BruÃ±a, R., Pereda, E., GutiÃ©rrez, R., Bajo, R., MaestÃº, F., & del-Pozo, F. (2013). HERMES: towards an integrated toolbox to characterize functional and effective brain connectivity. Neuroinformatics, 11(4), 405-434. DOI: 10.1007/s12021-013-9186-1.
 
 % Author: Victor Lopez Madrona <v.lopez.madrona@gmail.com>
 % License: BSD (3-clause)
@@ -42,6 +42,8 @@ if nargin == 1
     data_amplitude = data_phase;
 end
 
+PSI_pval=[];
+
 %Move the frequency information to different variables
 f_min_theta=f_theta(1);
 f_max_theta=f_theta(2);
@@ -52,8 +54,6 @@ f_min_gamma=f_gamma(1);
 f_max_gamma=f_gamma(2);
 f_step_gamma=f_gamma(3);
 BW_gamma=f_gamma(4);
-
-noverlap = winlen - overlap;
 
 %Make the frequency vectors 
 x_theta=(f_min_theta:f_step_theta:f_max_theta);
