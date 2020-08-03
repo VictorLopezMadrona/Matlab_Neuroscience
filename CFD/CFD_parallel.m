@@ -42,8 +42,6 @@ if nargin == 1
     data_amplitude = data_phase;
 end
 
-PSI_pval=[];
-
 %Move the frequency information to different variables
 f_min_theta=f_theta(1);
 f_max_theta=f_theta(2);
@@ -62,8 +60,9 @@ y_gamma=(f_min_gamma:f_step_gamma:f_max_gamma);
 %Loop to get the CFD for each pixel
 lx=length(x_theta);
 ly=length(y_gamma);
+PSI_pval=zeros(ly,lx,Nsurro);
 for x=1:lx
-    for y=1:ly
+    parfor y=1:ly
         y_min=y_gamma(y)-BW_gamma/2;
         y_max=y_gamma(y)+BW_gamma/2;
         data_gamma=abs(hilbert(eegfilt(data_amplitude,Fs,y_min,y_max)));
