@@ -2,7 +2,7 @@ Matlab functions for time-series analysis in Neuroscience.
 
 Publications using and explaining these functions:
 
-- CFC, CFD, ICPC: Lopez-Madrona, V. J., Perez-Montoyo, E., Alvarez-Salvado, E., Moratal, D., Herreras, O., Pereda, E., ... & Canals, S. (2020). Different theta frameworks coexist in the hippocampus and are coordinated during memory-guided exploration and novelty detection. bioRxiv, 418434.
+- CFC, CFD, ICPC: Lopez-Madrona, V. J., Perez-Montoyo, E., Alvarez-Salvado, E., Moratal, D., Herreras, O., Pereda, E., ... & Canals, S. (2021). Different theta frameworks coexist in the hippocampus and are coordinated during memory-guided exploration and novelty detection. eLife, 9, e57313.
 
 - sGC: López-Madrona, V. J., Matias, F. S., Mirasso, C. R., Canals, S., & Pereda, E. (2019). Inferring correlations associated to causal interactions in brain signals using autoregressive models. Scientific reports, 9(1), 1-15.
  
